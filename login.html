@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login | Basil</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<header>
+    <h1>Basil</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<div class="login-box">
+    <h2>Login</h2>
+    <input id="user" type="text" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button id="btn">Login</button>
+    <p id="msg" style="color:#ffdd57"></p>
+</div>
+
+<script>
+document.getElementById('btn').addEventListener('click', function(){
+    const user = document.getElementById('user').value.trim();
+
+    if(!user) {
+        document.getElementById('msg').textContent = 'Enter a username';
+        return;
+    }
+
+    document.getElementById('msg').textContent = 'Logged in as ' + user + '...';
+    setTimeout(()=> location.href = 'index.html', 1000);
+});
+</script>
+
+<footer>
+    © 2025 Basil — All Rights Reserved
+</footer>
+
+</body>
+</html>
